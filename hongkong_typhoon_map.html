@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d52a862416c49158971db1c9a420dc71 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d52a862416c49158971db1c9a420dc71" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d52a862416c49158971db1c9a420dc71 = L.map(
+                "map_d52a862416c49158971db1c9a420dc71",
+                {
+                    center: [22.3193, 114.1694],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_b744bd117a96ad4c1f7649fc852079a9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_b744bd117a96ad4c1f7649fc852079a9.addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+            var circle_marker_db0e88b54ca6f92e58ffab8740e63b2c = L.circleMarker(
+                [22.2183, 114.2117],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.7, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_1b5706126715233a3b50a1d57927408c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_afebe929ce4c5f61375522276c82ae7a = $(`<div id="html_afebe929ce4c5f61375522276c82ae7a" style="width: 100.0%; height: 100.0%;"><b>黃麻角(赤柱)</b><br>最高阵风风速: 157 km/h<br>风向: -<br>时间: 16/9 14:00<br>最高平均风速: 101 km/h<br>平均风速风向: -</div>`)[0];
+                popup_1b5706126715233a3b50a1d57927408c.setContent(html_afebe929ce4c5f61375522276c82ae7a);
+            
+        
+
+        circle_marker_db0e88b54ca6f92e58ffab8740e63b2c.bindPopup(popup_1b5706126715233a3b50a1d57927408c)
+        ;
+
+        
+    
+    
+            var circle_marker_508d78f091bd86a131b3cde101cbbe58 = L.circleMarker(
+                [22.2855, 114.1588],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.9, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_e7d7e615cd7f89498fc55399749bda0d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b0a8ee90175bc06755ca9e7721f47a22 = $(`<div id="html_b0a8ee90175bc06755ca9e7721f47a22" style="width: 100.0%; height: 100.0%;"><b>中環碼頭</b><br>最高阵风风速: 169 km/h<br>风向: 東<br>时间: 16/9 12:30<br>最高平均风速: 99 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_e7d7e615cd7f89498fc55399749bda0d.setContent(html_b0a8ee90175bc06755ca9e7721f47a22);
+            
+        
+
+        circle_marker_508d78f091bd86a131b3cde101cbbe58.bindPopup(popup_e7d7e615cd7f89498fc55399749bda0d)
+        ;
+
+        
+    
+    
+            var circle_marker_b890d047db01b8f1387f588224fe678b = L.circleMarker(
+                [22.204, 114.027],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 21.2, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_5a1da214a2785b0e848edb458c77dd91 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5d68027cfc376a60c2ae9347d3d76841 = $(`<div id="html_5d68027cfc376a60c2ae9347d3d76841" style="width: 100.0%; height: 100.0%;"><b>長洲</b><br>最高阵风风速: 212 km/h<br>风向: 東<br>时间: 16/9 14:10<br>最高平均风速: 151 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_5a1da214a2785b0e848edb458c77dd91.setContent(html_5d68027cfc376a60c2ae9347d3d76841);
+            
+        
+
+        circle_marker_b890d047db01b8f1387f588224fe678b.bindPopup(popup_5a1da214a2785b0e848edb458c77dd91)
+        ;
+
+        
+    
+    
+            var circle_marker_871b45591864582faa386d462b01e639 = L.circleMarker(
+                [22.2, 114.03],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 20.9, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_40793143fe1ae564dde608bff85454dd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0829b9b7a5cb52a234421761808cf30c = $(`<div id="html_0829b9b7a5cb52a234421761808cf30c" style="width: 100.0%; height: 100.0%;"><b>長洲泳灘</b><br>最高阵风风速: 209 km/h<br>风向: 東北<br>时间: 16/9 12:01<br>最高平均风速: 142 km/h<br>平均风速风向: 東北偏東</div>`)[0];
+                popup_40793143fe1ae564dde608bff85454dd.setContent(html_0829b9b7a5cb52a234421761808cf30c);
+            
+        
+
+        circle_marker_871b45591864582faa386d462b01e639.bindPopup(popup_40793143fe1ae564dde608bff85454dd)
+        ;
+
+        
+    
+    
+            var circle_marker_b2d420233957b546d24f5036a44fa518 = L.circleMarker(
+                [22.37, 113.96],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.9, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_8d10b583e0fcfc90efa87aded56f7dee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3b9a32146065e48b342870cf76b128b5 = $(`<div id="html_3b9a32146065e48b342870cf76b128b5" style="width: 100.0%; height: 100.0%;"><b>青洲</b><br>最高阵风风速: 229 km/h<br>风向: 東北偏北<br>时间: 16/9 10:29<br>最高平均风速: 124 km/h<br>平均风速风向: 東北</div>`)[0];
+                popup_8d10b583e0fcfc90efa87aded56f7dee.setContent(html_3b9a32146065e48b342870cf76b128b5);
+            
+        
+
+        circle_marker_b2d420233957b546d24f5036a44fa518.bindPopup(popup_8d10b583e0fcfc90efa87aded56f7dee)
+        ;
+
+        
+    
+    
+            var circle_marker_7e167b86afcb3d49afe7ae4b48acfe48 = L.circleMarker(
+                [22.308, 113.9185],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.7, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_95bf9301225294c31504565a81ddaf8e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_db4a9625f6b26ce96bf54cad2901d08f = $(`<div id="html_db4a9625f6b26ce96bf54cad2901d08f" style="width: 100.0%; height: 100.0%;"><b>香港國際機場</b><br>最高阵风风速: 157 km/h<br>风向: 東南偏東<br>时间: 16/9 16:26<br>最高平均风速: 99 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_95bf9301225294c31504565a81ddaf8e.setContent(html_db4a9625f6b26ce96bf54cad2901d08f);
+            
+        
+
+        circle_marker_7e167b86afcb3d49afe7ae4b48acfe48.bindPopup(popup_95bf9301225294c31504565a81ddaf8e)
+        ;
+
+        
+    
+    
+            var circle_marker_8ccc6efadcf9e63204a2c7baf1f3d825 = L.circleMarker(
+                [22.3167, 114.2167],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.2, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_e1db12d6f730e525be2a7204bc718efe = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27cd513fe305262088edd3b1f9363227 = $(`<div id="html_27cd513fe305262088edd3b1f9363227" style="width: 100.0%; height: 100.0%;"><b>啟德</b><br>最高阵风风速: 142 km/h<br>风向: 東北偏東<br>时间: 16/9 10:28<br>最高平均风速: 77 km/h<br>平均风速风向: 東南偏東</div>`)[0];
+                popup_e1db12d6f730e525be2a7204bc718efe.setContent(html_27cd513fe305262088edd3b1f9363227);
+            
+        
+
+        circle_marker_8ccc6efadcf9e63204a2c7baf1f3d825.bindPopup(popup_e1db12d6f730e525be2a7204bc718efe)
+        ;
+
+        
+    
+    
+            var circle_marker_89d7d78df1e7637bdbfecf79d707a637 = L.circleMarker(
+                [22.2767, 114.1742],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.1, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_fce27dd8e3a855fc687242f16c250039 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4890e19074bf8d7f30cb973c207a391 = $(`<div id="html_a4890e19074bf8d7f30cb973c207a391" style="width: 100.0%; height: 100.0%;"><b>京士柏</b><br>最高阵风风速: 161 km/h<br>风向: 東北偏北<br>时间: 16/9 10:17<br>最高平均风速: 67 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_fce27dd8e3a855fc687242f16c250039.setContent(html_a4890e19074bf8d7f30cb973c207a391);
+            
+        
+
+        circle_marker_89d7d78df1e7637bdbfecf79d707a637.bindPopup(popup_fce27dd8e3a855fc687242f16c250039)
+        ;
+
+        
+    
+    
+            var circle_marker_7dba655ecaafee7085c036281c53bd40 = L.circleMarker(
+                [22.4667, 114.0167],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.6, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_70639a058cb0f103cb84d9cf26b8a97e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3bae87f63378b0b57b66a1f35ca9fd6d = $(`<div id="html_3bae87f63378b0b57b66a1f35ca9fd6d" style="width: 100.0%; height: 100.0%;"><b>流浮山</b><br>最高阵风风速: 166 km/h<br>风向: 東北偏東<br>时间: 16/9 12:40<br>最高平均风速: 96 km/h<br>平均风速风向: 東北偏東</div>`)[0];
+                popup_70639a058cb0f103cb84d9cf26b8a97e.setContent(html_3bae87f63378b0b57b66a1f35ca9fd6d);
+            
+        
+
+        circle_marker_7dba655ecaafee7085c036281c53bd40.bindPopup(popup_70639a058cb0f103cb84d9cf26b8a97e)
+        ;
+
+        
+    
+    
+            var circle_marker_c64c660fd017da6d53212ea570aad803 = L.circleMarker(
+                [22.2922, 114.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.1, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_e2ebac067a08f49d432fd1ac1bbbbbb1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4e471ed46ecfc89011f761763ff2653e = $(`<div id="html_4e471ed46ecfc89011f761763ff2653e" style="width: 100.0%; height: 100.0%;"><b>北角</b><br>最高阵风风速: 171 km/h<br>风向: 東<br>时间: 16/9 12:51<br>最高平均风速: 110 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_e2ebac067a08f49d432fd1ac1bbbbbb1.setContent(html_4e471ed46ecfc89011f761763ff2653e);
+            
+        
+
+        circle_marker_c64c660fd017da6d53212ea570aad803.bindPopup(popup_e2ebac067a08f49d432fd1ac1bbbbbb1)
+        ;
+
+        
+    
+    
+            var circle_marker_09f79ec08362066fd34209d520aa7a57 = L.circleMarker(
+                [22.3333, 114.0833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.4, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_699304c6d01bdcd4e59524e8edbec5bc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_03c36c93b11724cda59b0e5817d64c42 = $(`<div id="html_03c36c93b11724cda59b0e5817d64c42" style="width: 100.0%; height: 100.0%;"><b>平洲</b><br>最高阵风风速: 124 km/h<br>风向: 東<br>时间: 16/9 11:30<br>最高平均风速: 47 km/h<br>平均风速风向: 東南偏南</div>`)[0];
+                popup_699304c6d01bdcd4e59524e8edbec5bc.setContent(html_03c36c93b11724cda59b0e5817d64c42);
+            
+        
+
+        circle_marker_09f79ec08362066fd34209d520aa7a57.bindPopup(popup_699304c6d01bdcd4e59524e8edbec5bc)
+        ;
+
+        
+    
+    
+            var circle_marker_fbac9b14eb47989f5626fafe5383ff7a = L.circleMarker(
+                [22.3833, 114.2667],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18.0, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_4e9e048618c623b87776f3b0e1a36ba7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_74195010aea1c0d19702cc0adaf1e216 = $(`<div id="html_74195010aea1c0d19702cc0adaf1e216" style="width: 100.0%; height: 100.0%;"><b>西貢</b><br>最高阵风风速: 180 km/h<br>风向: 東北<br>时间: 16/9 11:43<br>最高平均风速: 108 km/h<br>平均风速风向: 東北</div>`)[0];
+                popup_4e9e048618c623b87776f3b0e1a36ba7.setContent(html_74195010aea1c0d19702cc0adaf1e216);
+            
+        
+
+        circle_marker_fbac9b14eb47989f5626fafe5383ff7a.bindPopup(popup_4e9e048618c623b87776f3b0e1a36ba7)
+        ;
+
+        
+    
+    
+            var circle_marker_05139044e55aecce05101dbaa8795863 = L.circleMarker(
+                [22.2, 113.95],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.4, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_6b1121d646b7dc42616de0a7d88f4848 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f974e48a51f352ac711099076035879b = $(`<div id="html_f974e48a51f352ac711099076035879b" style="width: 100.0%; height: 100.0%;"><b>沙洲</b><br>最高阵风风速: 164 km/h<br>风向: 東<br>时间: 16/9 14:02<br>最高平均风速: 103 km/h<br>平均风速风向: 東南偏東</div>`)[0];
+                popup_6b1121d646b7dc42616de0a7d88f4848.setContent(html_f974e48a51f352ac711099076035879b);
+            
+        
+
+        circle_marker_05139044e55aecce05101dbaa8795863.bindPopup(popup_6b1121d646b7dc42616de0a7d88f4848)
+        ;
+
+        
+    
+    
+            var circle_marker_4031cccea9ef7ac4fa8040bc21c1e504 = L.circleMarker(
+                [22.25, 113.95],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.9, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_61d4c5729681b9f0da86358e7f5d15b4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0850f68b287175bb99318a280ef25875 = $(`<div id="html_0850f68b287175bb99318a280ef25875" style="width: 100.0%; height: 100.0%;"><b>沙螺灣</b><br>最高阵风风速: 169 km/h<br>风向: 東<br>时间: 16/9 14:11<br>最高平均风速: 87 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_61d4c5729681b9f0da86358e7f5d15b4.setContent(html_0850f68b287175bb99318a280ef25875);
+            
+        
+
+        circle_marker_4031cccea9ef7ac4fa8040bc21c1e504.bindPopup(popup_61d4c5729681b9f0da86358e7f5d15b4)
+        ;
+
+        
+    
+    
+            var circle_marker_c0eb75c0ebdf737cd3cc3c00f0e19edd = L.circleMarker(
+                [22.3833, 114.1833],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.9, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_19b9ce636f8a0061d15c4a0564ecc3a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e64d6958887a22e6451a9970ab8a9493 = $(`<div id="html_e64d6958887a22e6451a9970ab8a9493" style="width: 100.0%; height: 100.0%;"><b>沙田</b><br>最高阵风风速: 149 km/h<br>风向: 東北偏北<br>时间: 16/9 11:42<br>最高平均风速: 47 km/h<br>平均风速风向: 東北偏北</div>`)[0];
+                popup_19b9ce636f8a0061d15c4a0564ecc3a6.setContent(html_e64d6958887a22e6451a9970ab8a9493);
+            
+        
+
+        circle_marker_c0eb75c0ebdf737cd3cc3c00f0e19edd.bindPopup(popup_19b9ce636f8a0061d15c4a0564ecc3a6)
+        ;
+
+        
+    
+    
+            var circle_marker_d2e2db9b42fda41c22563aae52272a79 = L.circleMarker(
+                [22.4333, 114.05],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.4, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_28c78836c2125f434407ea5e85ddfdfc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bd426e171906cf5be3d6707dc6eb3178 = $(`<div id="html_bd426e171906cf5be3d6707dc6eb3178" style="width: 100.0%; height: 100.0%;"><b>石崗</b><br>最高阵风风速: 164 km/h<br>风向: 東北<br>时间: 16/9 11:22<br>最高平均风速: 72 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_28c78836c2125f434407ea5e85ddfdfc.setContent(html_bd426e171906cf5be3d6707dc6eb3178);
+            
+        
+
+        circle_marker_d2e2db9b42fda41c22563aae52272a79.bindPopup(popup_28c78836c2125f434407ea5e85ddfdfc)
+        ;
+
+        
+    
+    
+            var circle_marker_38f166d3ee148b66d1ba583528cba662 = L.circleMarker(
+                [22.295, 114.17],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.5, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_6aee011b1d78e694b36db23e53c2d6e8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6399ac0e919487c5e637d8a5c1aaaffa = $(`<div id="html_6399ac0e919487c5e637d8a5c1aaaffa" style="width: 100.0%; height: 100.0%;"><b>九龍天星碼頭</b><br>最高阵风风速: 135 km/h<br>风向: 東<br>时间: 16/9 13:48<br>最高平均风速: 79 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_6aee011b1d78e694b36db23e53c2d6e8.setContent(html_6399ac0e919487c5e637d8a5c1aaaffa);
+            
+        
+
+        circle_marker_38f166d3ee148b66d1ba583528cba662.bindPopup(popup_6aee011b1d78e694b36db23e53c2d6e8)
+        ;
+
+        
+    
+    
+            var circle_marker_10e8f08841a2bbcdb03f39418355d9bc = L.circleMarker(
+                [22.55, 114.1167],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.3, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_8455f075c8f0b29c300a35cf45ce8896 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5276977bd91f07d8813cd7a65b74c8ed = $(`<div id="html_5276977bd91f07d8813cd7a65b74c8ed" style="width: 100.0%; height: 100.0%;"><b>打鼓嶺</b><br>最高阵风风速: 133 km/h<br>风向: 東北偏東<br>时间: 16/9 13:28<br>最高平均风速: 52 km/h<br>平均风速风向: 東北偏北</div>`)[0];
+                popup_8455f075c8f0b29c300a35cf45ce8896.setContent(html_5276977bd91f07d8813cd7a65b74c8ed);
+            
+        
+
+        circle_marker_10e8f08841a2bbcdb03f39418355d9bc.bindPopup(popup_8455f075c8f0b29c300a35cf45ce8896)
+        ;
+
+        
+    
+    
+            var circle_marker_18b3ee070d3cc889652d348dcee9261b = L.circleMarker(
+                [22.4833, 114.2333],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.8, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_1978d2e072b439184d1d10b8af54a355 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ebdcb17cf60430dde1d6efb013b65028 = $(`<div id="html_ebdcb17cf60430dde1d6efb013b65028" style="width: 100.0%; height: 100.0%;"><b>大美督</b><br>最高阵风风速: 198 km/h<br>风向: 東北偏東<br>时间: 16/9 12:08<br>最高平均风速: 139 km/h<br>平均风速风向: 東北偏東</div>`)[0];
+                popup_1978d2e072b439184d1d10b8af54a355.setContent(html_ebdcb17cf60430dde1d6efb013b65028);
+            
+        
+
+        circle_marker_18b3ee070d3cc889652d348dcee9261b.bindPopup(popup_1978d2e072b439184d1d10b8af54a355)
+        ;
+
+        
+    
+    
+            var circle_marker_bf1874eb77865c5890453fb2bc96d657 = L.circleMarker(
+                [22.4022, 114.1361],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.0, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_8c200f57086be46549b8b61b40c983d9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a544b1d8e4e20b47df2fb5d9ecabf185 = $(`<div id="html_a544b1d8e4e20b47df2fb5d9ecabf185" style="width: 100.0%; height: 100.0%;"><b>大帽山</b><br>最高阵风风速: 250 km/h<br>风向: 東南偏東<br>时间: 16/9 14:05<br>最高平均风速: 167 km/h<br>平均风速风向: 東南偏東</div>`)[0];
+                popup_8c200f57086be46549b8b61b40c983d9.setContent(html_a544b1d8e4e20b47df2fb5d9ecabf185);
+            
+        
+
+        circle_marker_bf1874eb77865c5890453fb2bc96d657.bindPopup(popup_8c200f57086be46549b8b61b40c983d9)
+        ;
+
+        
+    
+    
+            var circle_marker_0a2632c28795d60718ddaa5e1e1d8bea = L.circleMarker(
+                [22.4333, 114.2],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.6, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_3fa825a3a24a962c7288441f3f2110dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fb2b4b5a07dafc47bba020c04ce119e5 = $(`<div id="html_fb2b4b5a07dafc47bba020c04ce119e5" style="width: 100.0%; height: 100.0%;"><b>大埔滘</b><br>最高阵风风速: 146 km/h<br>风向: 東<br>时间: 16/9 13:09<br>最高平均风速: 88 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_3fa825a3a24a962c7288441f3f2110dc.setContent(html_fb2b4b5a07dafc47bba020c04ce119e5);
+            
+        
+
+        circle_marker_0a2632c28795d60718ddaa5e1e1d8bea.bindPopup(popup_3fa825a3a24a962c7288441f3f2110dc)
+        ;
+
+        
+    
+    
+            var circle_marker_5ae071f2fb376315081bd02c3dfb9725 = L.circleMarker(
+                [22.3531, 114.2111],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.6, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_eb4e330a796ebd61e8f65ea48e8b5fb5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6fe0725d251a1a9c585ba25ac445d19e = $(`<div id="html_6fe0725d251a1a9c585ba25ac445d19e" style="width: 100.0%; height: 100.0%;"><b>大老山</b><br>最高阵风风速: 256 km/h<br>风向: 東北偏東<br>时间: 16/9 10:33<br>最高平均风速: 158 km/h<br>平均风速风向: 東北偏東</div>`)[0];
+                popup_eb4e330a796ebd61e8f65ea48e8b5fb5.setContent(html_6fe0725d251a1a9c585ba25ac445d19e);
+            
+        
+
+        circle_marker_5ae071f2fb376315081bd02c3dfb9725.bindPopup(popup_eb4e330a796ebd61e8f65ea48e8b5fb5)
+        ;
+
+        
+    
+    
+            var circle_marker_e1abd64f43d79e274c918987363e13a2 = L.circleMarker(
+                [22.308, 114.264],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.3, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_0d1d92f93e091ad963219f6fbdeaab60 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_beb42eb476ee9b44ebbfb5e77b09c421 = $(`<div id="html_beb42eb476ee9b44ebbfb5e77b09c421" style="width: 100.0%; height: 100.0%;"><b>將軍澳</b><br>最高阵风风速: 153 km/h<br>风向: 東北偏北<br>时间: 16/9 10:40<br>最高平均风速: 52 km/h<br>平均风速风向: 東北偏北</div>`)[0];
+                popup_0d1d92f93e091ad963219f6fbdeaab60.setContent(html_beb42eb476ee9b44ebbfb5e77b09c421);
+            
+        
+
+        circle_marker_e1abd64f43d79e274c918987363e13a2.bindPopup(popup_0d1d92f93e091ad963219f6fbdeaab60)
+        ;
+
+        
+    
+    
+            var circle_marker_5bb20d72cf80a03c35158f36cd88b8c1 = L.circleMarker(
+                [22.3533, 114.1042],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.7, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_34cb451c0b98045eb110aff67f6eeef6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9645ebc04bde0e784972602cdcfa64bc = $(`<div id="html_9645ebc04bde0e784972602cdcfa64bc" style="width: 100.0%; height: 100.0%;"><b>青衣島蜆殼油庫</b><br>最高阵风风速: 137 km/h<br>风向: 東南偏東<br>时间: 16/9 14:22<br>最高平均风速: 58 km/h<br>平均风速风向: 東南偏東</div>`)[0];
+                popup_34cb451c0b98045eb110aff67f6eeef6.setContent(html_9645ebc04bde0e784972602cdcfa64bc);
+            
+        
+
+        circle_marker_5bb20d72cf80a03c35158f36cd88b8c1.bindPopup(popup_34cb451c0b98045eb110aff67f6eeef6)
+        ;
+
+        
+    
+    
+            var circle_marker_78d978dc8105cdc04116df41c3971731 = L.circleMarker(
+                [22.3917, 113.9775],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.3, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_c711ffc17667b38ae21e105f16c99310 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d8d39bb625c1d8ce915b363938b133f = $(`<div id="html_9d8d39bb625c1d8ce915b363938b133f" style="width: 100.0%; height: 100.0%;"><b>屯門政府合署</b><br>最高阵风风速: 133 km/h<br>风向: 東<br>时间: 16/9 14:01<br>最高平均风速: 51 km/h<br>平均风速风向: 東南</div>`)[0];
+                popup_c711ffc17667b38ae21e105f16c99310.setContent(html_9d8d39bb625c1d8ce915b363938b133f);
+            
+        
+
+        circle_marker_78d978dc8105cdc04116df41c3971731.bindPopup(popup_c711ffc17667b38ae21e105f16c99310)
+        ;
+
+        
+    
+    
+            var circle_marker_b8f3278c4098a57b08facc1e9a2fc597 = L.circleMarker(
+                [22.1817, 114.3033],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.0, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_5616f3f8110a975f87317d4175ef9df0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_065d07dde395b63e56fe2c3507b933bc = $(`<div id="html_065d07dde395b63e56fe2c3507b933bc" style="width: 100.0%; height: 100.0%;"><b>橫瀾島</b><br>最高阵风风速: 220 km/h<br>风向: 東北<br>时间: 16/9 10:14<br>最高平均风速: 158 km/h<br>平均风速风向: 東北</div>`)[0];
+                popup_5616f3f8110a975f87317d4175ef9df0.setContent(html_065d07dde395b63e56fe2c3507b933bc);
+            
+        
+
+        circle_marker_b8f3278c4098a57b08facc1e9a2fc597.bindPopup(popup_5616f3f8110a975f87317d4175ef9df0)
+        ;
+
+        
+    
+    
+            var circle_marker_3b946fb1d5dc95a1f886a34ec2c89e0c = L.circleMarker(
+                [22.4681, 114.0097],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.0, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_0388098a19745713cdd69f665c81a257 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_91a1818a7a4ac04410324c28b0fbebf0 = $(`<div id="html_91a1818a7a4ac04410324c28b0fbebf0" style="width: 100.0%; height: 100.0%;"><b>濕地公園</b><br>最高阵风风速: 130 km/h<br>风向: 東<br>时间: 16/9 13:06<br>最高平均风速: 58 km/h<br>平均风速风向: 東</div>`)[0];
+                popup_0388098a19745713cdd69f665c81a257.setContent(html_91a1818a7a4ac04410324c28b0fbebf0);
+            
+        
+
+        circle_marker_3b946fb1d5dc95a1f886a34ec2c89e0c.bindPopup(popup_0388098a19745713cdd69f665c81a257)
+        ;
+
+        
+    
+    
+            var circle_marker_621b1bdf41466e0cf3af26add207688c = L.circleMarker(
+                [22.2481, 114.1736],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.3, "stroke": true, "weight": 3}
+            ).addTo(map_d52a862416c49158971db1c9a420dc71);
+        
+    
+        var popup_bfc5952af4af3f1fc198acff8a2d08f8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b67d01c48b50ac5d810845d1d4e0d53f = $(`<div id="html_b67d01c48b50ac5d810845d1d4e0d53f" style="width: 100.0%; height: 100.0%;"><b>黃竹坑</b><br>最高阵风风速: 173 km/h<br>风向: 東北偏東<br>时间: 16/9 13:40<br>最高平均风速: 54 km/h<br>平均风速风向: 東北偏東</div>`)[0];
+                popup_bfc5952af4af3f1fc198acff8a2d08f8.setContent(html_b67d01c48b50ac5d810845d1d4e0d53f);
+            
+        
+
+        circle_marker_621b1bdf41466e0cf3af26add207688c.bindPopup(popup_bfc5952af4af3f1fc198acff8a2d08f8)
+        ;
+
+        
+    
+</script>
+</html>
