@@ -59,16 +59,16 @@ fig1.patch.set_facecolor("black")
 ax1.set_facecolor("black")
 ax1.axis("off")
 
-# 添加标题 - 与原始程序完全一致
+# 添加标题 - 调整位置增加上边距
 fig1.suptitle('TYPHOON MANGKHUT - WIND SPEED VISUALIZATION', 
              fontsize=18, 
              fontweight='bold', 
              color='white', 
-             y=0.95,
+             y=0.92,
              fontfamily='monospace')
 
-# 添加操作提示 - 这是缺少的第二行文字！
-ax1.text(0.5, 0.88, 'Click on any station dot for detailed information', 
+# 添加操作提示 - 调整位置保持合理间距
+ax1.text(0.5, 0.85, 'Click on any station dot for detailed information', 
         transform=fig1.transFigure, 
         fontsize=10, 
         color='lightgray', 
@@ -77,8 +77,8 @@ ax1.text(0.5, 0.88, 'Click on any station dot for detailed information',
         alpha=0.8,
         style='italic')
 
-# 添加副标题
-ax1.text(0.5, 0.02, 'Hong Kong Weather Stations | September 2018', 
+# 添加副标题 - 调整位置增加下边距
+ax1.text(0.5, 0.08, 'Hong Kong Weather Stations | September 2018', 
         transform=ax1.transAxes, 
         fontsize=12, 
         color='cyan', 
@@ -92,9 +92,9 @@ ax1.set_ylim(-max_radius, max_radius)
 
 scat1 = ax1.scatter(x, y, s=sizes, c=colors, alpha=0.8, edgecolors="white", linewidth=0.5)
 
-# 保存基础视图
+# 保存基础视图 - 使用标准边距避免文字紧贴边缘
 fig1.savefig(os.path.join(parent_dir, 'assets', 'screenshot_basic.png'), 
-            dpi=150, facecolor='black', bbox_inches='tight')
+            dpi=150, facecolor='black', bbox_inches=None, pad_inches=0.2)
 print("✓ 生成基础视图截图: assets/screenshot_basic.png")
 
 # 创建截图2：点击效果展示 - 使用与原始程序相同的设置
@@ -103,16 +103,16 @@ fig2.patch.set_facecolor("black")
 ax2.set_facecolor("black")
 ax2.axis("off")
 
-# 添加标题
+# 添加标题 - 调整位置增加上边距
 fig2.suptitle('TYPHOON MANGKHUT - WIND SPEED VISUALIZATION', 
              fontsize=18, 
              fontweight='bold', 
              color='white', 
-             y=0.95,
+             y=0.92,
              fontfamily='monospace')
 
-# 添加操作提示
-ax2.text(0.5, 0.88, 'Example: Clicking on Cheung Chau Station shows details', 
+# 添加操作提示 - 调整位置保持合理间距
+ax2.text(0.5, 0.85, 'Example: Clicking on Cheung Chau Station shows details', 
         transform=fig2.transFigure, 
         fontsize=10, 
         color='lightgray', 
@@ -121,8 +121,8 @@ ax2.text(0.5, 0.88, 'Example: Clicking on Cheung Chau Station shows details',
         alpha=0.8,
         style='italic')
 
-# 添加副标题
-ax2.text(0.5, 0.02, 'Hong Kong Weather Stations | September 2018', 
+# 添加副标题 - 调整位置增加下边距
+ax2.text(0.5, 0.08, 'Hong Kong Weather Stations | September 2018', 
         transform=ax2.transAxes, 
         fontsize=12, 
         color='cyan', 
@@ -165,9 +165,9 @@ annotation = ax2.annotate(
 )
 annotation.set_visible(True)
 
-# 保存点击效果截图
+# 保存点击效果截图 - 使用标准边距避免文字紧贴边缘
 fig2.savefig(os.path.join(parent_dir, 'assets', 'screenshot_clicked.png'), 
-            dpi=150, facecolor='black', bbox_inches='tight')
+            dpi=150, facecolor='black', bbox_inches=None, pad_inches=0.2)
 print("✓ 生成点击效果截图: assets/screenshot_clicked.png")
 
 plt.close('all')
