@@ -82,12 +82,12 @@ Through this design, the dataset is transformed from raw numbers into a scientif
 |------------|-------------|
 | ![Basic View](assets/screenshot_basic.png) | ![Click Effect](assets/screenshot_clicked.png) |
 
-### 🎯 Key Interactive Features
-- **🖱️ Click Response**: Click any station dot to view detailed information
-- **💧 Water Ripple Effect**: Beautiful expanding circles simulate wind impact  
-- **📊 Information Display**: Station name, wind speed, direction, and time
-- **✨ Visual Feedback**: Highlighted dots with smooth fade-in/out effects
-- **🌊 Breathing Animation**: Continuous gentle movement simulating air flow
+### Key Interactive Features
+- **Click Response**: Click any station dot to view detailed information
+- **Water Ripple Effect**: Beautiful expanding circles simulate wind impact  
+- **Information Display**: Station name, wind speed, direction, and time
+- **Visual Feedback**: Highlighted dots with smooth fade-in/out effects
+- **Breathing Animation**: Continuous gentle movement simulating air flow
 
 ### Export Your Own Media
 
