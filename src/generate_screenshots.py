@@ -53,8 +53,8 @@ y = radii * np.sin(angles)
 colors = plt.cm.viridis(speeds / speeds.max())
 sizes = speeds * 5 + 50
 
-# 创建截图1：基础视图
-fig1, ax1 = plt.subplots(figsize=(12, 10))
+# 创建截图1：基础视图 - 使用与原始程序相同的尺寸
+fig1, ax1 = plt.subplots(figsize=(10, 10))
 fig1.patch.set_facecolor("black")
 ax1.set_facecolor("black")
 ax1.axis("off")
@@ -77,18 +77,38 @@ fig1.savefig(os.path.join(parent_dir, 'assets', 'screenshot_basic.png'),
             dpi=150, facecolor='black', bbox_inches='tight')
 print("✓ 生成基础视图截图: assets/screenshot_basic.png")
 
-# 创建截图2：点击效果展示
-fig2, ax2 = plt.subplots(figsize=(12, 10))
+# 创建截图2：点击效果展示 - 使用与原始程序相同的设置
+fig2, ax2 = plt.subplots(figsize=(10, 10))
 fig2.patch.set_facecolor("black")
 ax2.set_facecolor("black")
 ax2.axis("off")
 
-fig2.suptitle('TYPHOON MANGKHUT - STATION DETAILS DISPLAY', 
-             fontsize=18, fontweight='bold', color='white', y=0.95, fontfamily='monospace')
+# 添加标题
+fig2.suptitle('TYPHOON MANGKHUT - WIND SPEED VISUALIZATION', 
+             fontsize=18, 
+             fontweight='bold', 
+             color='white', 
+             y=0.95,
+             fontfamily='monospace')
 
-ax2.text(0.5, 0.02, 'Example: Clicking on Cheung Chau Station', 
-        transform=ax2.transAxes, fontsize=12, color='cyan', ha='center',
-        fontfamily='monospace', alpha=0.8)
+# 添加操作提示
+ax2.text(0.5, 0.88, 'Example: Clicking on Cheung Chau Station shows details', 
+        transform=fig2.transFigure, 
+        fontsize=10, 
+        color='lightgray', 
+        ha='center',
+        fontfamily='monospace',
+        alpha=0.8,
+        style='italic')
+
+# 添加副标题
+ax2.text(0.5, 0.02, 'Hong Kong Weather Stations | September 2018', 
+        transform=ax2.transAxes, 
+        fontsize=12, 
+        color='cyan', 
+        ha='center',
+        fontfamily='monospace',
+        alpha=0.8)
 
 ax2.set_xlim(-max_radius, max_radius)
 ax2.set_ylim(-max_radius, max_radius)
@@ -108,11 +128,22 @@ for i in range(3):
                        color='cyan', alpha=alpha, linewidth=2)
     ax2.add_patch(circle)
 
-# 添加信息框
-info_text = f"STATION: Cheung Chau\nWIND SPEED: {speeds[highlight_idx]} km/h\nDIRECTION: E\nTIME: 16/9 14:10"
-ax2.text(0.5, 0.5, info_text, transform=ax2.transAxes, 
-        bbox=dict(boxstyle="round,pad=1.0", fc="black", alpha=0.8, edgecolor="cyan", linewidth=2),
-        fontsize=14, color="white", ha='center', va='center', fontfamily='monospace')
+# 添加信息框 - 使用与原始程序完全相同的样式和定位
+info_text = f"STATION: Cheung Chau\nWIND SPEED: {int(speeds[highlight_idx])} km/h\nDIRECTION: E\nTIME: 16/9 14:10"
+
+# 使用annotate来创建信息框，与原始程序保持一致
+annotation = ax2.annotate(
+    info_text,
+    xy=(0, 0), xytext=(0.5, 0.5),
+    textcoords="axes fraction",
+    bbox=dict(boxstyle="round,pad=1.0", fc="black", alpha=0.8, edgecolor="cyan", linewidth=2),
+    fontsize=14,
+    color="white",
+    ha="center",
+    va="center",
+    fontfamily="monospace"
+)
+annotation.set_visible(True)
 
 # 保存点击效果截图
 fig2.savefig(os.path.join(parent_dir, 'assets', 'screenshot_clicked.png'), 
