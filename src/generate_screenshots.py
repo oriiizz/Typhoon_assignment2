@@ -53,18 +53,38 @@ y = radii * np.sin(angles)
 colors = plt.cm.viridis(speeds / speeds.max())
 sizes = speeds * 5 + 50
 
-# 创建截图1：基础视图 - 使用与原始程序相同的尺寸
+# 创建截图1：基础视图 - 使用与原始程序完全相同的设置
 fig1, ax1 = plt.subplots(figsize=(10, 10))
 fig1.patch.set_facecolor("black")
 ax1.set_facecolor("black")
 ax1.axis("off")
 
-fig1.suptitle('TYPHOON MANGKHUT - WIND VISUALIZATION', 
-             fontsize=18, fontweight='bold', color='white', y=0.95, fontfamily='monospace')
+# 添加标题 - 与原始程序完全一致
+fig1.suptitle('TYPHOON MANGKHUT - WIND SPEED VISUALIZATION', 
+             fontsize=18, 
+             fontweight='bold', 
+             color='white', 
+             y=0.95,
+             fontfamily='monospace')
 
-ax1.text(0.5, 0.02, 'Click on any station dot for detailed information', 
-        transform=ax1.transAxes, fontsize=12, color='cyan', ha='center',
-        fontfamily='monospace', alpha=0.8)
+# 添加操作提示 - 这是缺少的第二行文字！
+ax1.text(0.5, 0.88, 'Click on any station dot for detailed information', 
+        transform=fig1.transFigure, 
+        fontsize=10, 
+        color='lightgray', 
+        ha='center',
+        fontfamily='monospace',
+        alpha=0.8,
+        style='italic')
+
+# 添加副标题
+ax1.text(0.5, 0.02, 'Hong Kong Weather Stations | September 2018', 
+        transform=ax1.transAxes, 
+        fontsize=12, 
+        color='cyan', 
+        ha='center',
+        fontfamily='monospace',
+        alpha=0.8)
 
 max_radius = np.max(radii) * 1.4
 ax1.set_xlim(-max_radius, max_radius)
