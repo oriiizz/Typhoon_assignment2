@@ -86,11 +86,6 @@ Through this design, the dataset is transformed from raw numbers into a scientif
 python src/export_interactive_demo.py
 ```
 
-**Generate Basic Animation:**
-```bash
-python src/export_gif.py
-```
-
 **Create Screenshots:**
 ```bash
 python src/generate_screenshots.py
@@ -103,8 +98,7 @@ Typhoon/
 ├── README.md
 ├── requirements.txt
 ├── assets/
-│   ├── typhoon.gif                    # Basic animation
-│   ├── typhoon_interactive_demo.gif   # Interactive demo
+│   ├── typhoon_interactive_demo.gif   # Interactive demo GIF
 │   ├── screenshot_basic.png           # Basic view screenshot
 │   └── screenshot_clicked.png         # Click effect screenshot
 ├── data/
@@ -112,8 +106,7 @@ Typhoon/
 │   └── wind_timeseries.csv            # Time series data
 └── src/
     ├── typhoon_visualization.py       # Main interactive script
-    ├── export_gif.py                  # Basic GIF exporter
-    ├── export_interactive_demo.py     # Interactive demo GIF
+    ├── export_interactive_demo.py     # Interactive demo GIF exporter
     └── generate_screenshots.py        # Screenshot generator
 ```
 
