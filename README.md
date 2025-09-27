@@ -2,7 +2,12 @@
 
 ## Project Introduction
 
-This project transforms the meteorological station data of Typhoon Mangkhut (2018, Hong Kong) into an artistic visualization animation.
+This### Key Interactive Features
+- **Click Response**: Click any station dot to view detailed information
+- **Water Ripple Effect**: Beautiful expanding circles simulate wind impact  
+- **Information Display**: Station name, wind speed, direction, and time
+- **Visual Feedback**: Highlighted dots with smooth fade-in/out effects
+- **Breathing Animation**: Continuous gentle movement simulating air flowct transforms the meteorological station data of Typhoon Mangkhut (2018, Hong Kong) into an artistic visualization animation.
 By turning raw wind data into a dynamic display, it captures the power of natural forces while adding breathing-like rhythms and ripple effects, exploring the boundary between data visualization and artistic expression.
 
 ## Data Source
@@ -40,7 +45,7 @@ Through this design, the dataset is transformed from raw numbers into a scientif
 
 ## How to Run
 
-### 🚀 Quick Start
+### Quick Start
 
 1. **Clone the repository:**
    ```bash
@@ -58,13 +63,13 @@ Through this design, the dataset is transformed from raw numbers into a scientif
    python src/typhoon_visualization.py
    ```
 
-### 🕵️ Interactive Controls
+### Interactive Controls
 - **Click on any station dot** → View detailed wind information
 - **Station info display** → Name, wind speed, direction, and time
 - **Visual effects** → Water ripple animation + highlighted station
 - **Smooth transitions** → Fade-in/out information display
 
-## 🎬 Demo & Features
+## Demo & Features
 
 ### Interactive Demonstration
 ![Interactive Demo](assets/typhoon_interactive_demo.gif)
@@ -80,11 +85,11 @@ Through this design, the dataset is transformed from raw numbers into a scientif
 ### 🎯 Key Interactive Features
 - **🖱️ Click Response**: Click any station dot to view detailed information
 - **💧 Water Ripple Effect**: Beautiful expanding circles simulate wind impact  
-- **� Information Display**: Station name, wind speed, direction, and time
+- **📊 Information Display**: Station name, wind speed, direction, and time
 - **✨ Visual Feedback**: Highlighted dots with smooth fade-in/out effects
 - **🌊 Breathing Animation**: Continuous gentle movement simulating air flow
 
-### 🎥 Export Your Own Media
+### Export Your Own Media
 
 **Generate Interactive Demo GIF:**
 ```bash
@@ -98,7 +103,7 @@ python src/generate_screenshots.py
 # Creates: assets/screenshot_basic.png & screenshot_clicked.png
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Typhoon/
@@ -112,19 +117,19 @@ Typhoon/
 │   ├── typhoon_mangkhut.html               # HKO weather data (28 stations)
 │   └── wind_timeseries.csv                # Time series data
 └── src/                               # Source code
-    ├── typhoon_visualization.py           # 🎆 Main interactive program
+    ├── typhoon_visualization.py           # Main interactive program
     ├── export_interactive_demo.py         # GIF exporter (20 FPS, optimized)
     └── generate_screenshots.py            # Screenshot generator
 ```
 
-## 🎆 Summary
+## Summary
 
 This project transforms Typhoon Mangkhut wind speed data into an **artistic interactive visualization** that merges data science with creative design.
 
 **Key Achievements:**
-- 🌊 **Data-driven Art**: Converts raw meteorological data into aesthetic visual experience
-- 🖱️ **Interactive Design**: Click-responsive interface with smooth animations
-- 🎨 **Artistic Expression**: Breathing effects and ripple animations symbolize natural forces
-- 📈 **Scientific Accuracy**: Maintains authentic wind speed and direction data
+- **Data-driven Art**: Converts raw meteorological data into aesthetic visual experience
+- **Interactive Design**: Click-responsive interface with smooth animations
+- **Artistic Expression**: Breathing effects and ripple animations symbolize natural forces
+- **Scientific Accuracy**: Maintains authentic wind speed and direction data
 
 The visualization reflects real wind distribution patterns while expressing the dynamic beauty of natural forces through responsive, animated design.
