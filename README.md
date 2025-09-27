@@ -59,20 +59,41 @@ Through this design, the dataset is transformed from raw numbers into a scientif
 
 ## Demo Result
 
-### Animated Visualization
-![Typhoon Mangkhut Animation](assets/typhoon.gif)
+### 🎬 Interactive Features Demo
+![Interactive Demo](assets/typhoon_interactive_demo.gif)
 
-*Dynamic visualization showing the artistic breathing and rotation effects of weather station data*
+*Complete interactive demonstration showing click effects, station information display, and water ripple animations*
 
-### Export Your Own GIF
-To generate a new GIF animation, run:
+### 📸 Before & After Comparison
+
+**Basic View:**
+![Basic View](assets/screenshot_basic.png)
+
+**Click Effect:**
+![Click Effect](assets/screenshot_clicked.png)
+
+### 🎯 Key Interactive Features:
+- **🖱️ Click Response**: Click any station dot to view detailed information
+- **💧 Water Ripple Effect**: Beautiful expanding circles simulate wind impact
+- **📊 Information Display**: Station name, wind speed, direction, and time
+- **✨ Visual Feedback**: Highlighted dots with smooth fade-in/out effects
+- **🌊 Breathing Animation**: Continuous gentle movement simulating air flow
+
+### Export Your Own Media
+
+**Generate Interactive Demo GIF:**
+```bash
+python src/export_interactive_demo.py
+```
+
+**Generate Basic Animation:**
 ```bash
 python src/export_gif.py
 ```
 
-Or modify the main visualization script by uncommenting the export lines:
-```python
-# ani.save("assets/typhoon.gif", writer="pillow", fps=20, dpi=80)
+**Create Screenshots:**
+```bash
+python src/generate_screenshots.py
 ```
 
 ## Project Structure
@@ -82,13 +103,18 @@ Typhoon/
 ├── README.md
 ├── requirements.txt
 ├── assets/
-│   └── typhoon.gif
+│   ├── typhoon.gif                    # Basic animation
+│   ├── typhoon_interactive_demo.gif   # Interactive demo
+│   ├── screenshot_basic.png           # Basic view screenshot
+│   └── screenshot_clicked.png         # Click effect screenshot
 ├── data/
-│   ├── typhoon_mangkhut.html
-│   └── wind_timeseries.csv
+│   ├── typhoon_mangkhut.html           # HKO weather data
+│   └── wind_timeseries.csv            # Time series data
 └── src/
-    ├── typhoon_visualization.py
-    └── export_gif.py
+    ├── typhoon_visualization.py       # Main interactive script
+    ├── export_gif.py                  # Basic GIF exporter
+    ├── export_interactive_demo.py     # Interactive demo GIF
+    └── generate_screenshots.py        # Screenshot generator
 ```
 
 ## Summary
