@@ -1,26 +1,23 @@
 # Typhoon Mangkhut - Artistic Wind Visualization
 
 ## Project Introduction
-### 🎯 Key Interactive Features:
-- **🖱️ Click Response**: Click any station dot to view detailed information
-- **💧 Water Ripple Effect**: Beautiful expanding circles simulate wind impact
-- **📊 Information Display**: Station name, wind speed, direction, and time
-- **✨ Visual Feedback**: Highlighted dots with smooth fade-in/out effects
-- **🌊 Breathing Animation**: Continuous gentle movement simulating air flow
 
-## Project Structureorms the meteorological station data of Typhoon Mangkhut (2018, Hong Kong) into an artistic visualization animation.
+This project transforms the meteorological station data of Typhoon Mangkhut (2018, Hong Kong) into an artistic visualization animation.
 By turning raw wind data into a dynamic display, it captures the power of natural forces while adding breathing-like rhythms and ripple effects, exploring the boundary between data visualization and artistic expression.
 
 ## Data Source
 
 **Source:** Hong Kong Observatory (HKO)
 
-**Data content:**
-- Maximum gust wind speed, wind direction, and observation time at various meteorological stations during Typhoon Mangkhut
+**Dataset Details:**
+- **Event:** Typhoon Mangkhut (September 2018)
+- **Stations:** 28 meteorological stations across Hong Kong
+- **Metrics:** Maximum gust wind speed, wind direction, and observation time
 
-**Data collection:**
+**Data Processing:**
 - Scraped from official HKO HTML tables
 - Processed and cleaned using BeautifulSoup + pandas
+- Filtered valid wind speed records (> 0 km/h)
 
 ## Creativity & Artistic Design
 
@@ -43,6 +40,8 @@ Through this design, the dataset is transformed from raw numbers into a scientif
 
 ## How to Run
 
+### 🚀 Quick Start
+
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/oriiizz/Typhoon_assignment2.git
@@ -59,65 +58,73 @@ Through this design, the dataset is transformed from raw numbers into a scientif
    python src/typhoon_visualization.py
    ```
 
-4. **Interaction:**
-   - Click on a circle → view wind speed, direction, and observation time for that station
-   - Info will fade in and out at the center, while a ripple expansion animation is triggered
+### 🕵️ Interactive Controls
+- **Click on any station dot** → View detailed wind information
+- **Station info display** → Name, wind speed, direction, and time
+- **Visual effects** → Water ripple animation + highlighted station
+- **Smooth transitions** → Fade-in/out information display
 
-## Demo Result
+## 🎬 Demo & Features
 
-### 🎬 Interactive Features Demo
+### Interactive Demonstration
 ![Interactive Demo](assets/typhoon_interactive_demo.gif)
 
 *Complete interactive demonstration showing click effects, station information display, and water ripple animations*
 
-### 📸 Before & After Comparison
+### Before & After Comparison
 
-**Basic View:**
-![Basic View](assets/screenshot_basic.png)
+| Basic View | Click Effect |
+|------------|-------------|
+| ![Basic View](assets/screenshot_basic.png) | ![Click Effect](assets/screenshot_clicked.png) |
 
-**Click Effect:**
-![Click Effect](assets/screenshot_clicked.png)
+### 🎯 Key Interactive Features
+- **🖱️ Click Response**: Click any station dot to view detailed information
+- **💧 Water Ripple Effect**: Beautiful expanding circles simulate wind impact  
+- **� Information Display**: Station name, wind speed, direction, and time
+- **✨ Visual Feedback**: Highlighted dots with smooth fade-in/out effects
+- **🌊 Breathing Animation**: Continuous gentle movement simulating air flow
 
-### Key Interactive Features:
-- **Click Response**: Click any station dot to view detailed information
-- **Water Ripple Effect**: Beautiful expanding circles simulate wind impact
-- **Information Display**: Station name, wind speed, direction, and time
-- **Visual Feedback**: Highlighted dots with smooth fade-in/out effects
-- **Breathing Animation**: Continuous gentle movement simulating air flow
-
-### Export Your Own Media
+### 🎥 Export Your Own Media
 
 **Generate Interactive Demo GIF:**
 ```bash
 python src/export_interactive_demo.py
+# Creates: assets/typhoon_interactive_demo.gif (6.9MB, 20 FPS)
 ```
 
-**Create Screenshots:**
+**Create Static Screenshots:**
 ```bash
-python src/generate_screenshots.py
+python src/generate_screenshots.py  
+# Creates: assets/screenshot_basic.png & screenshot_clicked.png
 ```
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 Typhoon/
-├── README.md
-├── requirements.txt
-├── assets/
-│   ├── typhoon_interactive_demo.gif   # Interactive demo GIF
-│   ├── screenshot_basic.png           # Basic view screenshot
-│   └── screenshot_clicked.png         # Click effect screenshot
-├── data/
-│   ├── typhoon_mangkhut.html           # HKO weather data
-│   └── wind_timeseries.csv            # Time series data
-└── src/
-    ├── typhoon_visualization.py       # Main interactive script
-    ├── export_interactive_demo.py     # Interactive demo GIF exporter
-    └── generate_screenshots.py        # Screenshot generator
+├── README.md                          # Project documentation
+├── requirements.txt                   # Python dependencies
+├── assets/                            # Generated media files
+│   ├── typhoon_interactive_demo.gif       # Interactive demo (6.9MB)
+│   ├── screenshot_basic.png               # Basic view screenshot
+│   └── screenshot_clicked.png             # Click effect screenshot
+├── data/                              # Source data files
+│   ├── typhoon_mangkhut.html               # HKO weather data (28 stations)
+│   └── wind_timeseries.csv                # Time series data
+└── src/                               # Source code
+    ├── typhoon_visualization.py           # 🎆 Main interactive program
+    ├── export_interactive_demo.py         # GIF exporter (20 FPS, optimized)
+    └── generate_screenshots.py            # Screenshot generator
 ```
 
-## Summary
+## 🎆 Summary
 
-This project uses Typhoon Mangkhut wind speed data to create a visualization that merges data science with artistic design.
+This project transforms Typhoon Mangkhut wind speed data into an **artistic interactive visualization** that merges data science with creative design.
 
-It reflects the real wind speed distribution while expressing the aesthetic and dynamic beauty of natural forces through interactive animation.
+**Key Achievements:**
+- 🌊 **Data-driven Art**: Converts raw meteorological data into aesthetic visual experience
+- 🖱️ **Interactive Design**: Click-responsive interface with smooth animations
+- 🎨 **Artistic Expression**: Breathing effects and ripple animations symbolize natural forces
+- 📈 **Scientific Accuracy**: Maintains authentic wind speed and direction data
+
+The visualization reflects real wind distribution patterns while expressing the dynamic beauty of natural forces through responsive, animated design.
