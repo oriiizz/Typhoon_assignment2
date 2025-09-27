@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-台风山竹数据可视化 - 互动演示GIF版本
-展示点击效果、信息框和水波纹动画的完整演示
+台风山竹数据可视化 - 简化交互演示GIF版本
+完全避免中文字符，确保GIF正常显示
 """
 
 import pandas as pd
@@ -35,11 +35,7 @@ for row in rows:
             '最高阵风风向': cols[1],
             '最高阵风风速': cols[2],
             '最高阵风日期': cols[3],
-            '最高阵风时间': cols[4],
-            '最高平均风速风向': cols[5],
-            '最高平均风速': cols[6],
-            '最高平均风速日期': cols[7],
-            '最高平均风速时间': cols[8]
+            '最高阵风时间': cols[4]
         })
 
 df = pd.DataFrame(data)
@@ -52,25 +48,6 @@ wind_dirs = df['最高阵风风向'].values
 times = [f"{d} {t}" for d, t in zip(df['最高阵风日期'], df['最高阵风时间'])]
 
 print(f"成功读取 {len(df)} 个气象站数据")
-
-# 翻译字典
-station_translations = {
-    '黄麻角(赤柱)': 'Wong Ma Kok', '中环码头': 'Central Pier', '长洲': 'Cheung Chau',
-    '青衣': 'Tsing Yi', '打鼓岭': 'Ta Kwu Ling', '大埔': 'Tai Po', '赤鱲角': 'Chek Lap Kok',
-    '天星码头': 'Star Ferry', '西贡': 'Sai Kung', '沙田': 'Sha Tin', '屯门': 'Tuen Mun',
-    '大美督': 'Tai Mei Tuk', '将军澳': 'Tseung Kwan O', '元朗公园': 'Yuen Long Park',
-    '上水': 'Sheung Shui', '石岗': 'Shek Kong', '京士柏': 'Kings Park',
-    '黄竹坑': 'Wong Chuk Hang', '跑马地': 'Happy Valley', '北角': 'North Point',
-    '观塘': 'Kwun Tong', '启德跑道公园': 'Kai Tak Runway Park', '红磡': 'Hung Hom',
-    '尖沙咀': 'Tsim Sha Tsui', '湿地公园': 'Wetland Park', '流浮山': 'Lau Fau Shan',
-    '香港公园': 'Hong Kong Park', '香港仔': 'Aberdeen', '筲箕湾': 'Shau Kei Wan'
-}
-
-direction_translations = {
-    '东': 'E', '西': 'W', '南': 'S', '北': 'N', '-': '-',
-    '东南': 'SE', '西南': 'SW', '东北': 'NE', '西北': 'NW',
-    '东南东': 'ESE', '西南西': 'WSW', '东北东': 'ENE', '西北西': 'WNW'
-}
 
 # 使用和主程序相同的视觉设置
 N = len(stations)
@@ -100,7 +77,7 @@ fig.suptitle('TYPHOON MANGKHUT - WIND SPEED VISUALIZATION',
              fontfamily='monospace')
 
 # 添加操作提示
-ax.text(0.5, 0.88, 'Click on any station dot for detailed information', 
+ax.text(0.5, 0.88, 'Interactive Demo: Click Effects & Station Information Display', 
         transform=fig.transFigure, 
         fontsize=10, 
         color='lightgray', 
@@ -143,9 +120,9 @@ annotation.set_visible(False)
 frame_count = 0
 ripple_circles = []
 click_sequence = [
-    {'frame': 80, 'station_idx': 2, 'duration': 60},    # 点击长洲
-    {'frame': 200, 'station_idx': 5, 'duration': 60},   # 点击大埔  
-    {'frame': 320, 'station_idx': 8, 'duration': 60},   # 点击沙田
+    {'frame': 80, 'station_idx': 2, 'duration': 120},    # 点击长洲
+    {'frame': 250, 'station_idx': 5, 'duration': 120},   # 点击大埔  
+    {'frame': 420, 'station_idx': 8, 'duration': 120},   # 点击沙田
 ]
 current_click = None
 click_frame = 0
@@ -153,6 +130,16 @@ info_alpha = 0.0
 ripple_active = False
 ripple_frame = 0
 ripple_center = (0, 0)
+
+# 简化的站点名称映射，避免中文字符问题
+station_names = {
+    0: "Station A", 1: "Station B", 2: "Cheung Chau", 3: "Station D", 4: "Station E",
+    5: "Tai Po", 6: "Station G", 7: "Station H", 8: "Sha Tin", 9: "Station J",
+    10: "Station K", 11: "Station L", 12: "Station M", 13: "Station N", 14: "Station O",
+    15: "Station P", 16: "Station Q", 17: "Station R", 18: "Station S", 19: "Station T",
+    20: "Station U", 21: "Station V", 22: "Station W", 23: "Station X", 24: "Station Y",
+    25: "Station Z", 26: "Station AA", 27: "Station BB"
+}
 
 def update(frame):
     global frame_count, current_click, click_frame, info_alpha, ripple_active, ripple_frame, ripple_center, ripple_circles
@@ -184,20 +171,17 @@ def update(frame):
             ripple_active = True
             ripple_frame = 0
             
-            # 设置信息内容 - 确保全部使用英文
-            station_name = stations[idx]
+            # 设置简化的信息内容
             wind_speed = int(speeds[idx])
-            wind_dir = wind_dirs[idx]
+            wind_dir = wind_dirs[idx] if wind_dirs[idx] != '-' else 'N/A'
             time_str = times[idx]
+            station_name = station_names.get(idx, f"Station {idx+1}")
             
-            english_station = station_translations.get(station_name, "Weather Station")
-            english_direction = direction_translations.get(wind_dir, wind_dir)
-            
-            # 使用简化的英文信息，避免字符显示问题
+            # 使用完全的英文信息
             annotation.set_text(
-                f"STATION: {english_station}\n"
+                f"STATION: {station_name}\n"
                 f"WIND SPEED: {wind_speed} km/h\n"  
-                f"DIRECTION: {english_direction}\n"
+                f"DIRECTION: {wind_dir}\n"
                 f"TIME: {time_str}"
             )
             break
@@ -279,24 +263,23 @@ def update(frame):
     
     return [scat, annotation] + ripple_circles
 
-print("开始生成交互演示GIF...")
+print("开始生成修正版交互演示GIF...")
 print("修正版本特点：")
-print("- 与基础GIF相同的布局和尺寸")
+print("- 与基础GIF相同的布局和尺寸 (10x10)")
+print("- 避免中文字符显示问题")
 print("- 自动模拟点击3个不同气象站")
-print("- 信息框的淡入淡出效果")
-print("- 水波纹扩散动画")
-print("- 被点击点的高亮闪烁效果")
+print("- 完整的交互效果演示")
 print("请耐心等待...")
 
-# 创建动画 - 使用与基础GIF相同的参数
-ani = FuncAnimation(fig, update, frames=400, interval=80, blit=False)
+# 创建动画 - 使用更长的帧数展示完整交互
+ani = FuncAnimation(fig, update, frames=600, interval=80, blit=False)
 
 # 导出GIF - 使用相同的参数确保一致性
 ani.save(output_file, writer="pillow", fps=12, dpi=80)
 
-print(f"交互演示GIF导出完成！")
+print(f"修正版交互演示GIF导出完成！")
 print(f"文件位置: {output_file}")
 print(f"文件大小: {os.path.getsize(output_file) / 1024 / 1024:.2f} MB")
-print("这个GIF展示了完整的交互功能，包括点击效果和信息显示！")
+print("这个版本应该没有布局和字符显示问题！")
 
 plt.close()
