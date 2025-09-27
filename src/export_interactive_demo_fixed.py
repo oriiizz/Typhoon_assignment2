@@ -103,16 +103,17 @@ ax.set_ylim(-max_radius, max_radius)
 # 创建初始散点图
 scat = ax.scatter(x, y, s=sizes, c=colors, alpha=0.8, edgecolors="white", linewidth=0.5)
 
-# 信息显示框 - 使用和原始程序相同的样式
+# 信息显示框 - 使用与原始程序完全相同的样式
 annotation = ax.annotate(
     "",
     xy=(0, 0), xytext=(0.5, 0.5),
     textcoords="axes fraction",
-    bbox=dict(boxstyle="round,pad=0.8", fc="lightyellow", alpha=0.95, edgecolor="white", linewidth=2),
-    fontsize=12,
-    color="black",
+    bbox=dict(boxstyle="round,pad=1.0", fc="black", alpha=0.0, edgecolor="cyan", linewidth=2),
+    fontsize=14,
+    color="white",
     ha="center",
-    va="center"
+    va="center",
+    fontfamily="monospace"
 )
 annotation.set_visible(False)
 
@@ -131,10 +132,30 @@ ripple_active = False
 ripple_frame = 0
 ripple_center = (0, 0)
 
-# 简化的站点名称映射，避免中文字符问题
+# 使用与原始程序相同的翻译字典
+direction_translations = {
+    '北': 'N', '東北': 'NE', '東': 'E', '東南': 'SE',
+    '南': 'S', '西南': 'SW', '西': 'W', '西北': 'NW',
+    '東北偏北': 'NNE', '東北偏東': 'ENE',
+    '東南偏東': 'ESE', '東南偏南': 'SSE',
+    '西南偏南': 'SSW', '西南偏西': 'WSW',
+    '西北偏西': 'WNW', '西北偏北': 'NNW',
+    '-': 'N/A'  # 处理缺失数据
+}
+
+station_translations = {
+    '黃麻角(赤柱)': 'Wong Ma Kok (Stanley)',
+    '中環碼頭': 'Central Pier',
+    '長洲': 'Cheung Chau',
+    '長洲泳灘': 'Cheung Chau Beach',
+    '青洲': 'Green Island',
+    '香港國際機場': 'HK International Airport'
+}
+
+# 简化的站点名称映射（作为备用）
 station_names = {
-    0: "Station A", 1: "Station B", 2: "Cheung Chau", 3: "Station D", 4: "Station E",
-    5: "Tai Po", 6: "Station G", 7: "Station H", 8: "Sha Tin", 9: "Station J",
+    0: "Station A", 1: "Central Pier", 2: "Cheung Chau", 3: "Station D", 4: "Station E",
+    5: "Station F", 6: "Station G", 7: "Station H", 8: "Station I", 9: "Station J",
     10: "Station K", 11: "Station L", 12: "Station M", 13: "Station N", 14: "Station O",
     15: "Station P", 16: "Station Q", 17: "Station R", 18: "Station S", 19: "Station T",
     20: "Station U", 21: "Station V", 22: "Station W", 23: "Station X", 24: "Station Y",
@@ -171,17 +192,20 @@ def update(frame):
             ripple_active = True
             ripple_frame = 0
             
-            # 设置简化的信息内容
-            wind_speed = int(speeds[idx])
-            wind_dir = wind_dirs[idx] if wind_dirs[idx] != '-' else 'N/A'
+            # 设置信息内容 - 使用与原始程序相同的逻辑
+            station_name = stations[idx]
+            wind_speed = speeds[idx]
+            wind_dir = wind_dirs[idx]
             time_str = times[idx]
-            station_name = station_names.get(idx, f"Station {idx+1}")
             
-            # 使用完全的英文信息
+            # 翻译站点名称和风向
+            english_station = station_translations.get(station_name, station_names.get(idx, f"Station {idx+1}"))
+            english_direction = direction_translations.get(wind_dir, wind_dir)
+            
             annotation.set_text(
-                f"STATION: {station_name}\n"
+                f"STATION: {english_station}\n"
                 f"WIND SPEED: {wind_speed} km/h\n"  
-                f"DIRECTION: {wind_dir}\n"
+                f"DIRECTION: {english_direction}\n"
                 f"TIME: {time_str}"
             )
             break
@@ -200,14 +224,17 @@ def update(frame):
             else:                      # 渐出
                 info_alpha = max(0, 1 - (click_frame-100)/30)
             
-            # 更新信息框透明度
+            # 更新信息框透明度 - 使用与原始程序相同的样式
             annotation.set_visible(True)
             annotation.set_alpha(info_alpha)
+            annotation.set_fontsize(14)
+            annotation.set_color("white")
+            annotation.set_family("monospace")
             bbox_props = dict(
-                boxstyle="round,pad=0.8",
-                fc="lightyellow",
-                alpha=info_alpha * 0.95,
-                edgecolor="white",
+                boxstyle="round,pad=1.0",
+                fc="black",
+                alpha=info_alpha * 0.8,
+                edgecolor="cyan",
                 linewidth=2
             )
             annotation.set_bbox(bbox_props)
