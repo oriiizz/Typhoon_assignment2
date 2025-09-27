@@ -1,8 +1,14 @@
 # Typhoon Mangkhut - Artistic Wind Visualization
 
 ## Project Introduction
+### 🎯 Key Interactive Features:
+- **🖱️ Click Response**: Click any station dot to view detailed information
+- **💧 Water Ripple Effect**: Beautiful expanding circles simulate wind impact
+- **📊 Information Display**: Station name, wind speed, direction, and time
+- **✨ Visual Feedback**: Highlighted dots with smooth fade-in/out effects
+- **🌊 Breathing Animation**: Continuous gentle movement simulating air flow
 
-This project transforms the meteorological station data of Typhoon Mangkhut (2018, Hong Kong) into an artistic visualization animation.
+## Project Structureorms the meteorological station data of Typhoon Mangkhut (2018, Hong Kong) into an artistic visualization animation.
 By turning raw wind data into a dynamic display, it captures the power of natural forces while adding breathing-like rhythms and ripple effects, exploring the boundary between data visualization and artistic expression.
 
 ## Data Source
