@@ -126,13 +126,17 @@ ax.set_ylim(-max_radius, max_radius)
 # 创建初始散点图
 scat = ax.scatter(x, y, s=sizes, c=colors, alpha=0.8, edgecolors="white", linewidth=0.5)
 
-# 信息显示框
-annotation = ax.annotate('', xy=(0, 0), xytext=(0.5, 0.5),
-                        textcoords='axes fraction',
-                        bbox=dict(boxstyle="round,pad=1.0", fc="black", 
-                                alpha=0.0, edgecolor="cyan", linewidth=2),
-                        fontsize=14, color="white", ha='center', va='center',
-                        fontfamily='monospace')
+# 信息显示框 - 使用和原始程序相同的样式
+annotation = ax.annotate(
+    "",
+    xy=(0, 0), xytext=(0.5, 0.5),
+    textcoords="axes fraction",
+    bbox=dict(boxstyle="round,pad=0.8", fc="lightyellow", alpha=0.95, edgecolor="white", linewidth=2),
+    fontsize=12,
+    color="black",
+    ha="center",
+    va="center"
+)
 annotation.set_visible(False)
 
 # 动画变量
@@ -155,18 +159,20 @@ def update(frame):
     
     frame_count = frame
     
-    # 基础动画效果
-    breathing = 1.0 + 0.1 * np.sin(frame * 0.15)
-    rotation = frame * 0.01
-    size_variation = 1.0 + 0.08 * np.sin(frame * 0.2 + np.arange(N) * 0.3)
+    # 使用和原始程序相同的运动模式：半径震荡而不是旋转
+    new_x, new_y = [], []
+    for i in range(N):
+        # 基准半径
+        base_r = radii[i]
+        # 每个点有不同的相位
+        phase = i * np.pi/8
+        # 半径在 ±15% 范围内震荡
+        r = base_r * (1 + 0.15 * np.sin(frame/20 + phase))
+        new_x.append(r * np.cos(angles[i]))
+        new_y.append(r * np.sin(angles[i]))
     
-    # 计算新位置
-    new_angles = angles + rotation
-    new_x = radii * np.cos(new_angles) * breathing
-    new_y = radii * np.sin(new_angles) * breathing
-    
-    # 计算新大小
-    new_sizes = original_sizes * size_variation
+    # 呼吸效果（圆点大小变化）- 使用和原始程序相同的参数
+    new_sizes = original_sizes * (1 + 0.2 * np.sin(frame/15))
     
     # 检查是否触发新的点击
     for click_event in click_sequence:
@@ -201,24 +207,29 @@ def update(frame):
         duration = current_click['duration']
         
         if click_frame <= duration:
-            # 信息框淡入淡出效果
-            if click_frame <= 15:  # 淡入
-                info_alpha = click_frame / 15.0
-            elif click_frame >= duration - 15:  # 淡出
-                info_alpha = (duration - click_frame) / 15.0
-            else:  # 持续显示
+            # 信息框淡入淡出效果 - 使用和原始程序相同的逻辑
+            if click_frame < 20:       # 前20帧 → 渐入
+                info_alpha = click_frame / 20
+            elif click_frame < 100:    # 中间保持
                 info_alpha = 1.0
+            else:                      # 渐出
+                info_alpha = max(0, 1 - (click_frame-100)/30)
             
             # 更新信息框透明度
             annotation.set_visible(True)
             annotation.set_alpha(info_alpha)
-            bbox = annotation.get_bbox_patch()
-            if bbox:
-                bbox.set_alpha(info_alpha * 0.8)
+            bbox_props = dict(
+                boxstyle="round,pad=0.8",
+                fc="lightyellow",
+                alpha=info_alpha * 0.95,
+                edgecolor="white",
+                linewidth=2
+            )
+            annotation.set_bbox(bbox_props)
             
-            # 高亮被点击的点
+            # 高亮被点击的点 - 使用和原始程序相同的效果
             idx = current_click['station_idx']
-            highlight_factor = 1.5 + 0.3 * np.sin(click_frame * 0.5)
+            highlight_factor = 1.5 + 0.3 * np.sin(frame/2)  # 使用frame而不是click_frame
             new_sizes[idx] *= highlight_factor
         else:
             # 点击效果结束
@@ -227,29 +238,37 @@ def update(frame):
             info_alpha = 0.0
             annotation.set_visible(False)
     
-    # 处理水波纹效果
+    # 处理水波纹效果 - 使用和原始程序完全相同的逻辑
+    # 清除之前的波纹圆圈
+    for circle in ripple_circles:
+        if circle in ax.patches:
+            circle.remove()
+    ripple_circles.clear()
+    
     if ripple_active:
         ripple_frame += 1
-        
-        # 清除旧的波纹圆圈
-        for circle in ripple_circles:
-            circle.remove()
-        ripple_circles.clear()
-        
-        if ripple_frame <= 50:  # 50帧的波纹动画
-            # 创建3层波纹
-            for i in range(3):
-                delay = i * 8  # 错开时间
-                if ripple_frame > delay:
-                    progress = (ripple_frame - delay) / 50.0
-                    radius = progress * 80  # 最大半径
-                    alpha = max(0, 1 - progress) * 0.8  # 透明度衰减
+        # 创建多层波纹效果
+        for i in range(3):  # 3层波纹
+            delay = i * 8  # 每层波纹延迟8帧
+            if ripple_frame > delay:
+                progress = (ripple_frame - delay) / 40.0  # 40帧完成一个波纹
+                if progress <= 1.0:
+                    radius = progress * 60  # 最大半径60
+                    alpha = 0.8 * (1 - progress)  # 透明度逐渐减少
                     
-                    circle = plt.Circle(ripple_center, radius, fill=False, 
-                                      color='cyan', alpha=alpha, linewidth=2)
+                    circle = plt.Circle(
+                        ripple_center, 
+                        radius,
+                        fill=False,
+                        edgecolor='cyan',
+                        linewidth=3 - i * 0.5,  # 外层波纹更细
+                        alpha=alpha
+                    )
                     ax.add_patch(circle)
                     ripple_circles.append(circle)
-        else:
+        
+        # 50帧后结束波纹效果
+        if ripple_frame >= 50:
             ripple_active = False
             ripple_frame = 0
     
