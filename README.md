@@ -84,7 +84,7 @@ Through this design, the dataset is transformed from raw numbers into a scientif
 - **Visual Feedback**: Highlighted dots with smooth fade-in/out effects
 - **Breathing Animation**: Continuous gentle movement simulating air flow
 
-### Export Your Own Media
+### Export My Own Media
 
 **Generate Interactive Demo GIF:**
 ```bash
