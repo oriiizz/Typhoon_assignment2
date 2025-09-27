@@ -121,9 +121,9 @@ annotation.set_visible(False)
 frame_count = 0
 ripple_circles = []
 click_sequence = [
-    {'frame': 80, 'station_idx': 2, 'duration': 120},    # 点击长洲
-    {'frame': 250, 'station_idx': 5, 'duration': 120},   # 点击大埔  
-    {'frame': 420, 'station_idx': 8, 'duration': 120},   # 点击沙田
+    {'frame': 60, 'station_idx': 2, 'duration': 80},    # 点击长洲
+    {'frame': 180, 'station_idx': 5, 'duration': 80},   # 点击大埔  
+    {'frame': 300, 'station_idx': 8, 'duration': 80},   # 点击沙田
 ]
 current_click = None
 click_frame = 0
@@ -290,19 +290,21 @@ def update(frame):
     
     return [scat, annotation] + ripple_circles
 
-print("开始生成修正版交互演示GIF...")
-print("修正版本特点：")
-print("- 与基础GIF相同的布局和尺寸 (10x10)")
-print("- 避免中文字符显示问题")
+print("开始生成交互演示GIF...")
+print("优化版本特点：")
+print("- 更快的播放速度（20 FPS）")
+print("- 更高的显示分辨率（100 DPI）")
 print("- 自动模拟点击3个不同气象站")
-print("- 完整的交互效果演示")
+print("- 信息框的淡入淡出效果")
+print("- 水波纹扩散动画")
+print("- 被点击点的高亮闪烁效果")
 print("请耐心等待...")
 
-# 创建动画 - 使用更长的帧数展示完整交互
-ani = FuncAnimation(fig, update, frames=600, interval=80, blit=False)
+# 创建动画 - 优化参数提升播放体验
+ani = FuncAnimation(fig, update, frames=420, interval=50, blit=False)
 
-# 导出GIF - 使用相同的参数确保一致性
-ani.save(output_file, writer="pillow", fps=12, dpi=80)
+# 导出GIF - 使用优化的参数：更高帧率和分辨率
+ani.save(output_file, writer="pillow", fps=20, dpi=100)
 
 print(f"修正版交互演示GIF导出完成！")
 print(f"文件位置: {output_file}")
