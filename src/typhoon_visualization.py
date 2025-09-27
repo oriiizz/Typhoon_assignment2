@@ -112,9 +112,15 @@ click_frame = 0
 text_alpha = 0.0
 text_life = 0   # 文字显示寿命计数
 
+# 波纹效果变量
+ripple_active = False
+ripple_center = (0, 0)
+ripple_frame = 0
+ripple_circles = []  # 存储波纹圆圈
+
 # ========== 动画更新函数 ==========
 def update(frame):
-    global click_idx, click_frame, text_alpha, text_life
+    global click_idx, click_frame, text_alpha, text_life, ripple_active, ripple_frame, ripple_circles
     
     # 每个点在基准半径附近做小幅度扩散运动
     new_x, new_y = [], []
@@ -167,6 +173,40 @@ def update(frame):
         if text_alpha <= 0:      # 完全透明后隐藏
             annotation.set_visible(False)
             text_life = 0
+
+    # === 控制波纹效果 ===
+    # 清除之前的波纹圆圈
+    for circle in ripple_circles:
+        if circle in ax.patches:
+            circle.remove()
+    ripple_circles.clear()
+    
+    if ripple_active:
+        ripple_frame += 1
+        # 创建多层波纹效果
+        for i in range(3):  # 3层波纹
+            delay = i * 8  # 每层波纹延迟8帧
+            if ripple_frame > delay:
+                progress = (ripple_frame - delay) / 40.0  # 40帧完成一个波纹
+                if progress <= 1.0:
+                    radius = progress * 60  # 最大半径60
+                    alpha = 0.8 * (1 - progress)  # 透明度逐渐减少
+                    
+                    circle = plt.Circle(
+                        ripple_center, 
+                        radius,
+                        fill=False,
+                        edgecolor='cyan',
+                        linewidth=3 - i * 0.5,  # 外层波纹更细
+                        alpha=alpha
+                    )
+                    ax.add_patch(circle)
+                    ripple_circles.append(circle)
+        
+        # 波纹动画完成后停止
+        if ripple_frame > 50:  # 50帧后停止波纹
+            ripple_active = False
+            ripple_frame = 0
 
     return scat,
 
@@ -223,12 +263,17 @@ direction_translations = {
 
 # ========== 点击事件 ==========
 def on_pick(event):
-    global annotation, click_idx, click_frame, text_alpha, text_life
+    global annotation, click_idx, click_frame, text_alpha, text_life, ripple_active, ripple_center, ripple_frame
     idx = event.ind[0]
     click_idx = idx
     click_frame = 0
     text_alpha = 0.0
     text_life = 1   # 开始计时
+    
+    # 启动波纹效果
+    ripple_active = True
+    ripple_center = scat.get_offsets()[idx]  # 获取被点击圆点的位置
+    ripple_frame = 0
     
     station_name = stations[idx]
     wind_speed = speeds[idx]
@@ -266,4 +311,10 @@ def on_pick(event):
 fig.canvas.mpl_connect("pick_event", on_pick)
 
 ani = FuncAnimation(fig, update, frames=500, interval=50, blit=False)
+
+# 导出为GIF（可选，取消注释以启用）
+# print("正在导出GIF，请稍候...")
+# ani.save("assets/typhoon.gif", writer="pillow", fps=20, dpi=80)
+# print("GIF导出完成: assets/typhoon.gif")
+
 plt.show()
